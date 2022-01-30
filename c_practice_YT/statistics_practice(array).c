@@ -1,7 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
-
 
 float avg(int n[10]);
 int MAX(int n[10]);
