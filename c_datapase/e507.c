@@ -4,8 +4,8 @@
 
 int main()
 {
-    char a[1000];
-    char b[1000];
+    char a[1001];
+    char b[1001];
     
     while(scanf("%s",a)!=EOF && scanf("%s",b)!=EOF){
 
