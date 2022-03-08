@@ -1,32 +1,33 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
-    int N;
-    int row,column;
+    int n,row,column;
+    scanf("%d",&n);
 
-    scanf("%d",&N);
-    for(int i=0;i<N;i++){
+    while(n--){
         scanf("%d %d",&row,&column);
+        int array[row*column];
 
-        int array[row][column];
+        for(int i=0;i<row*column;i++) scanf("%d",&array[i]);
 
-        for(int i=0;i<row;i++){
-            for(int j=0;j<column;j++){
-                scanf("%d",&array[i][j]);
-            }
+        int judge[row*column];
+        for(int i=0;i<row*column;i++) judge[i] = 0;
+        for(int i=0;i<row*column;i++){
+            if(array[i] == array[row*column-1-i]) judge[i]++;
         }
 
-        int rev_array[column][row];
-
-        for(int i=0;i<column;i++){
-            rev_array = 
+        int sum = 0;
+        for(int i=0;i<row*column;i++){
+            sum+=judge[i];
         }
-        
+
+        if(sum == row*column) printf("go forward");
+        else printf("keep defending");
+        puts("");
     }
-    
-    
+
     system("pause");
     return 0;
 }
